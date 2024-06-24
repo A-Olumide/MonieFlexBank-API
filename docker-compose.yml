@@ -6,8 +6,8 @@ services:
     container_name: database
     restart: always
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=Password
+      - POSTGRES_USER=
+      - POSTGRES_PASSWORD=
       - POSTGRES_DB=monieflex
     ports:
       - '5433:5432'
@@ -23,8 +23,8 @@ services:
           - 8000
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/monieflex
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=Password
+      - SPRING_DATASOURCE_USERNAME=
+      - SPRING_DATASOURCE_PASSWORD=
       - SPRING_JPA_HIBERNATE_DDL_AUTO=create
     depends_on:
       - database
